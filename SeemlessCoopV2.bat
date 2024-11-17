@@ -1,7 +1,7 @@
 @echo off
 
 
-:: COPY YOUR PATH HERE "C:\Program Files (x86)\Steam\steamapps\common\ELDEN RING\Game" BY DEFAULT
+:: COPY YOUR PATH HERE
 SET DEST_PATH=C:\Program Files (x86)\Steam\steamapps\common\ELDEN RING\Game
 
 :: Rename the settings file
