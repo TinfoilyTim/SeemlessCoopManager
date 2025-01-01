@@ -27,3 +27,14 @@ ren "%DEST_PATH%\SeamlessCoop\_ersc_settings.ini" ersc_settings.ini
 :: Clean up the downloaded ZIP file
 del ersc.zip
 
+:: Define variables
+set "shortcutName=Elden Ring co-op.lnk"
+set "shortcutPath=%UserProfile%\Desktop\%shortcutName%"
+set "exePath=%DEST_PATH%\ersc_launcher.exe"
+set "startInPath=%DEST_PATH%"
+
+:: Use PowerShell to create the shortcut
+powershell -NoProfile -Command "& { $Shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut('%shortcutPath%'); $Shortcut.TargetPath = '%exePath%'; $Shortcut.WorkingDirectory = '%startInPath%'; $Shortcut.Save(); }"
+
+echo Shortcut template created on your desktop: %shortcutPath%
+
